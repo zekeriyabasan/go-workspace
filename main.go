@@ -1,7 +1,7 @@
 package main
 
 import (
-	"everymore-go/slices"
+	"everymore-go/functions"
 )
 
 func main() {
@@ -10,6 +10,8 @@ func main() {
 	//conditionals.Demo1()
 	//loops.PredicateGame()
 	//loops.WriteFriendshipNumber(17296, 1846)
-	slices.Demo1()
+	//slices.Demo1()
+	functions.HiFunction("Zekeriya BAŞAN")
+	functions.Add(134, 400)
 
 }

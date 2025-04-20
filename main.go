@@ -1,6 +1,9 @@
 package main
 
-import "everymore-go/for_range.go"
+import (
+	"everymore-go/pointers"
+	"fmt"
+)
 
 func main() {
 	// variables.FirstDemo()
@@ -42,7 +45,16 @@ func main() {
 	// for_range.AddOddNumbers(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 	// for_range.WriteOddNumbers()
 
-	colors := map[string]string{"blue": "mavi", "yellow": "sarı", "pink": "pembe"}
-	for_range.WriteToConsoleMap(colors, " - ")
+	// colors := map[string]string{"blue": "mavi", "yellow": "sarı", "pink": "pembe"}
+	// for_range.WriteToConsoleMap(colors, " - ")
+
+	// number := 20
+
+	// pointers.Demo1(&number)
+	// fmt.Println(number)
+
+	numbers := []int{1, 2, 3, 4, 5}
+	pointers.Demo2(numbers)
+	fmt.Println("MAIN : ", numbers)
 
 }

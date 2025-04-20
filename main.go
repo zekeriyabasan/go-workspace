@@ -1,6 +1,6 @@
 package main
 
-import "everymore-go/maps"
+import "everymore-go/for_range.go"
 
 func main() {
 	// variables.FirstDemo()
@@ -24,19 +24,25 @@ func main() {
 	// numbers := []int{11, 22, 33, 44, 55, 66, 77, 88, 99}
 	// fmt.Println("Array de verebiliriz > Toplam: ", functions.AddVariadic(numbers...))
 
-	maps.FetchDictionaryValue("blue")
-	maps.FetchDictionaryValue("asdasdasd")
+	// maps.FetchDictionaryValue("blue")
+	// maps.FetchDictionaryValue("asdasdasd")
 
-	maps.FetchNumberText(1)
-	maps.FetchNumberText(999)
+	// maps.FetchNumberText(1)
+	// maps.FetchNumberText(999)
 
-	maps.AddANumber(999, "dokuz yüz doksan dokuz")
-	maps.FetchNumberText(999)
+	// maps.AddANumber(999, "dokuz yüz doksan dokuz")
+	// maps.FetchNumberText(999)
 
-	maps.DeleteANumber(1000)
-	maps.DeleteANumber(999)
+	// maps.DeleteANumber(1000)
+	// maps.DeleteANumber(999)
 
-	maps.UpdateANumber(1000, "BİN")
-	maps.UpdateANumber(1, "BİR")
+	// maps.UpdateANumber(1000, "BİN")
+	// maps.UpdateANumber(1, "BİR")
+
+	// for_range.AddOddNumbers(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+	// for_range.WriteOddNumbers()
+
+	colors := map[string]string{"blue": "mavi", "yellow": "sarı", "pink": "pembe"}
+	for_range.WriteToConsoleMap(colors, " - ")
 
 }

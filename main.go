@@ -1,9 +1,6 @@
 package main
 
-import (
-	"everymore-go/functions"
-	"fmt"
-)
+import "everymore-go/maps"
 
 func main() {
 	// variables.FirstDemo()
@@ -23,8 +20,23 @@ func main() {
 	// _, difference, _ := functions.MultiReturnAddRemoveDivide(56, 7)
 	// fmt.Println("Sadece farkı aldık :", difference)
 
-	fmt.Println("Toplam: ", functions.AddVariadic(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
-	numbers := []int{11, 22, 33, 44, 55, 66, 77, 88, 99}
-	fmt.Println("Array de verebiliriz > Toplam: ", functions.AddVariadic(numbers...))
+	// fmt.Println("Toplam: ", functions.AddVariadic(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+	// numbers := []int{11, 22, 33, 44, 55, 66, 77, 88, 99}
+	// fmt.Println("Array de verebiliriz > Toplam: ", functions.AddVariadic(numbers...))
+
+	maps.FetchDictionaryValue("blue")
+	maps.FetchDictionaryValue("asdasdasd")
+
+	maps.FetchNumberText(1)
+	maps.FetchNumberText(999)
+
+	maps.AddANumber(999, "dokuz yüz doksan dokuz")
+	maps.FetchNumberText(999)
+
+	maps.DeleteANumber(1000)
+	maps.DeleteANumber(999)
+
+	maps.UpdateANumber(1000, "BİN")
+	maps.UpdateANumber(1, "BİR")
 
 }

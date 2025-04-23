@@ -1,8 +1,8 @@
 package main
 
 import (
-	"everymore-go/structs"
-	"fmt"
+	"everymore-go/goroutines"
+	"time"
 )
 
 func main() {
@@ -58,25 +58,33 @@ func main() {
 	// fmt.Println("MAIN : ", numbers)
 
 	// structs.Demo1()
-	var z = structs.Customer{Id: 1, Name: "Zekeriya", Surname: "BAŞAN", Age: 27}
-	var m = structs.Customer{Id: 2, Name: "Mustafa Kemal", Surname: "BAŞAN", Age: 27}
-	var c = structs.Customer{Id: 3, Name: "Çağdaş", Surname: "BAŞAN", Age: 27}
-	var cc = structs.Customer{Id: 4, Name: "Çağrı", Surname: "BAŞAN", Age: 27}
+	// var z = structs.Customer{Id: 1, Name: "Zekeriya", Surname: "BAŞAN", Age: 27}
+	// var m = structs.Customer{Id: 2, Name: "Mustafa Kemal", Surname: "BAŞAN", Age: 27}
+	// var c = structs.Customer{Id: 3, Name: "Çağdaş", Surname: "BAŞAN", Age: 27}
+	// var cc = structs.Customer{Id: 4, Name: "Çağrı", Surname: "BAŞAN", Age: 27}
 
-	structs.AddACustomer(z)
-	structs.AddACustomer(m)
-	structs.AddACustomer(c)
-	structs.AddACustomer(cc)
+	// structs.AddACustomer(z)
+	// structs.AddACustomer(m)
+	// structs.AddACustomer(c)
+	// structs.AddACustomer(cc)
 
-	fmt.Println(structs.GetCustomers())
+	// fmt.Println(structs.GetCustomers())
 
-	m.Age = 31
-	c.Age = 34
-	cc.Age = 38
+	// m.Age = 31
+	// c.Age = 34
+	// cc.Age = 38
 
-	structs.UpdateACustomer(m)
-	structs.UpdateACustomer(c)
-	structs.UpdateACustomer(cc)
+	// structs.UpdateACustomer(m)
+	// structs.UpdateACustomer(c)
+	// structs.UpdateACustomer(cc)
 
-	fmt.Println(structs.GetCustomers())
+	// fmt.Println(structs.GetCustomers())
+
+	// goroutines.WriteColors([]string{"mavi", "sarı", "yeşil", "kırmızı", "mor", "siyah", "gri"}) // sync
+	// goroutines.WriteNumbers([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0})                                   //sync
+
+	go goroutines.WriteColors([]string{"mavi", "sarı", "yeşil", "kırmızı", "mor", "siyah", "gri"}) // async
+	go goroutines.WriteNumbers([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0})                                //async
+
+	time.Sleep(15 * time.Second)
 }

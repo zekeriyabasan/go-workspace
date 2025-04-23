@@ -1,8 +1,7 @@
 package main
 
 import (
-	"everymore-go/pointers"
-	"fmt"
+	"everymore-go/structs"
 )
 
 func main() {
@@ -53,8 +52,10 @@ func main() {
 	// pointers.Demo1(&number)
 	// fmt.Println(number)
 
-	numbers := []int{1, 2, 3, 4, 5}
-	pointers.Demo2(numbers)
-	fmt.Println("MAIN : ", numbers)
+	// numbers := []int{1, 2, 3, 4, 5}
+	// pointers.Demo2(numbers)
+	// fmt.Println("MAIN : ", numbers)
+
+	structs.Demo1()
 
 }

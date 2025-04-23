@@ -1,8 +1,8 @@
 package main
 
 import (
-	"everymore-go/goroutines"
-	"time"
+	"everymore-go/channels"
+	"fmt"
 )
 
 func main() {
@@ -83,8 +83,19 @@ func main() {
 	// goroutines.WriteColors([]string{"mavi", "sarı", "yeşil", "kırmızı", "mor", "siyah", "gri"}) // sync
 	// goroutines.WriteNumbers([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0})                                   //sync
 
-	go goroutines.WriteColors([]string{"mavi", "sarı", "yeşil", "kırmızı", "mor", "siyah", "gri"}) // async
-	go goroutines.WriteNumbers([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0})                                //async
+	// go goroutines.WriteColors([]string{"mavi", "sarı", "yeşil", "kırmızı", "mor", "siyah", "gri"}) // async
+	// go goroutines.WriteNumbers([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0})                                //async
 
-	time.Sleep(15 * time.Second)
+	// time.Sleep(15 * time.Second)
+
+	sumOddNumberCn := make(chan int) // bu kanallar sayasinde async işlemin tamamalndığını garanti ediyoruz artı değer alıyoruz.
+	writedCn := make(chan bool)
+
+	go channels.WriteColors(writedCn, []string{"mavi", "sarı", "yeşil", "kırmızı", "mor", "siyah", "gri"}) // async
+	go channels.SumOddNumber(sumOddNumberCn, []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 99})                      //async
+
+	isWritedColors, totalOddNumers := <-writedCn, <-sumOddNumberCn
+
+	fmt.Printf("Renkler yazıldı mı? : %v\nToplam: %d\n", isWritedColors, totalOddNumers)
+
 }

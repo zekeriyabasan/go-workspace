@@ -1,9 +1,6 @@
 package main
 
-import (
-	"everymore-go/channels"
-	"fmt"
-)
+import "everymore-go/interfaces"
 
 func main() {
 	// variables.FirstDemo()
@@ -88,14 +85,16 @@ func main() {
 
 	// time.Sleep(15 * time.Second)
 
-	sumOddNumberCn := make(chan int) // bu kanallar sayasinde async işlemin tamamalndığını garanti ediyoruz artı değer alıyoruz.
-	writedCn := make(chan bool)
+	// sumOddNumberCn := make(chan int) // bu kanallar sayasinde async işlemin tamamalndığını garanti ediyoruz artı değer alıyoruz.
+	// writedCn := make(chan bool)
 
-	go channels.WriteColors(writedCn, []string{"mavi", "sarı", "yeşil", "kırmızı", "mor", "siyah", "gri"}) // async
-	go channels.SumOddNumber(sumOddNumberCn, []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 99})                      //async
+	// go channels.WriteColors(writedCn, []string{"mavi", "sarı", "yeşil", "kırmızı", "mor", "siyah", "gri"}) // async
+	// go channels.SumOddNumber(sumOddNumberCn, []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 99})                      //async
 
-	isWritedColors, totalOddNumers := <-writedCn, <-sumOddNumberCn
+	// isWritedColors, totalOddNumers := <-writedCn, <-sumOddNumberCn
 
-	fmt.Printf("Renkler yazıldı mı? : %v\nToplam: %d\n", isWritedColors, totalOddNumers)
+	// fmt.Printf("Renkler yazıldı mı? : %v\nToplam: %d\n", isWritedColors, totalOddNumers)
+
+	interfaces.Demo1() // interdacelerde aynı metodu imlemente eder gibi yazıyoruz aracı bir fun ile structlar üz kullanıyoruz
 
 }

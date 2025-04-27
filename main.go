@@ -95,6 +95,6 @@ func main() {
 
 	// fmt.Printf("Renkler yazıldı mı? : %v\nToplam: %d\n", isWritedColors, totalOddNumers)
 
-	interfaces.Demo1() // interdacelerde aynı metodu imlemente eder gibi yazıyoruz aracı bir fun ile structlar üz kullanıyoruz
-
+	// interfaces.Demo1() // interdacelerde aynı metodu imlemente eder gibi yazıyoruz aracı bir fun ile structlar üz kullanıyoruz
+	interfaces.Demo2()
 }

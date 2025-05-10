@@ -107,5 +107,9 @@ func main() {
 	// deferstatement.Demo3()
 
 	// errorhandling.OpenFile("./error_handling/zeko.txt")
-	errorhandling.OpenFile("./invalidPAth/zeko.txt")
+	// errorhandling.OpenFile("./invalidPAth/zeko.txt")
+
+	// interfaces.Demo3()
+
+	errorhandling.StartGame()
 }

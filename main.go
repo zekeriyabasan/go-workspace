@@ -1,6 +1,8 @@
 package main
 
-import "everymore-go/interfaces"
+import (
+	deferstatement "everymore-go/defer_statement"
+)
 
 func main() {
 	// variables.FirstDemo()
@@ -96,5 +98,7 @@ func main() {
 	// fmt.Printf("Renkler yazıldı mı? : %v\nToplam: %d\n", isWritedColors, totalOddNumers)
 
 	// interfaces.Demo1() // interdacelerde aynı metodu imlemente eder gibi yazıyoruz aracı bir fun ile structlar üz kullanıyoruz
-	interfaces.Demo2()
+	// interfaces.Demo2()
+
+	deferstatement.B()
 }

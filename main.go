@@ -1,7 +1,7 @@
 package main
 
 import (
-	deferstatement "everymore-go/defer_statement"
+	errorhandling "everymore-go/error_handling"
 )
 
 func main() {
@@ -104,5 +104,7 @@ func main() {
 
 	// deferstatement.Calculate()
 
-	deferstatement.Demo3()
+	// deferstatement.Demo3()
+
+	errorhandling.OpenFile("./error_handling/zeko.txt")
 }

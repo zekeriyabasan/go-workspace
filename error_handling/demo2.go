@@ -1,18 +1,24 @@
 package errorhandling
 
 import (
-	"errors"
+	"bufio"
 	"fmt"
 	"math/rand"
+	"os"
+	"strconv"
+	"strings"
 )
 
 var randomNumber = rand.Intn(101) // 0 ile 99 arasında üretir
 func StartGame() {
-	estimate := -1
+	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("0-100 arası bir sayı tuttum tahmin et !")
 	for {
-		fmt.Scanln(&estimate)
-		_, err := checkValue(estimate)
+		fmt.Print("Tahminin: ")
+		input, _ := reader.ReadString('\n')
+		input = strings.TrimSpace(input)
+
+		_, err := checkValue(input)
 
 		if err != nil {
 			fmt.Println(err)
@@ -24,19 +30,20 @@ func StartGame() {
 
 }
 func checkValue(val interface{}) (bool, error) {
-	num, ok := val.(int)
+	if value, ok := val.(string); ok {
+		num, err := strconv.Atoi(value)
+		if err != nil {
+			return false, &invalidValue{"Lütfen tam sayı giriniz !"}
+		} else if num < 0 || num > 100 {
+			return false, &outOfRangeException{num, "0-100 arası sayı giriniz !"}
+		}
 
-	if !ok {
-		return false, errors.New("Lütfen tam sayı giriniz !")
-	} else if num < 0 || num > 100 {
-		return false, errors.New("0-100 arası bir sayı girmelisiniz !")
-	}
-
-	if randomNumber > num {
-		return false, errors.New("Daha büyük bir sayi giriniz :")
-	}
-	if randomNumber < num {
-		return false, errors.New("Daha küçük bir sayi giriniz :")
+		if randomNumber > num {
+			return false, &invalidValue{"Daha büyük bir sayi giriniz !"}
+		}
+		if randomNumber < num {
+			return false, &invalidValue{"Daha küçük bir sayi giriniz :"}
+		}
 	}
 
 	return true, nil

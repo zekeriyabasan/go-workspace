@@ -8,10 +8,16 @@ import (
 
 func OpenFile(path string) {
 	f, err := os.Open(path)
+
 	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
+		if pErr, ok := err.(*os.PathError); ok {
+			fmt.Printf("HATA: '%s' dosyasına erişilemedi (%s işlemi)\n", pErr.Path, pErr.Op)
+			return
+		} else {
+			fmt.Println("Error opening file:", err)
+		}
 	}
+
 	defer f.Close()
 
 	content, err := io.ReadAll(f)

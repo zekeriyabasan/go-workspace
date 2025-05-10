@@ -106,5 +106,6 @@ func main() {
 
 	// deferstatement.Demo3()
 
-	errorhandling.OpenFile("./error_handling/zeko.txt")
+	// errorhandling.OpenFile("./error_handling/zeko.txt")
+	errorhandling.OpenFile("./invalidPAth/zeko.txt")
 }

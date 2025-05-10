@@ -1,7 +1,7 @@
 package main
 
 import (
-	errorhandling "everymore-go/error_handling"
+	stringfunctions "everymore-go/string_functions"
 )
 
 func main() {
@@ -111,5 +111,7 @@ func main() {
 
 	// interfaces.Demo3()
 
-	errorhandling.StartGame()
+	// errorhandling.StartGame()
+
+	stringfunctions.Demo1()
 }

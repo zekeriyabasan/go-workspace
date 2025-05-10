@@ -102,5 +102,7 @@ func main() {
 
 	// deferstatement.B()
 
-	deferstatement.Calculate()
+	// deferstatement.Calculate()
+
+	deferstatement.Demo3()
 }

@@ -100,5 +100,7 @@ func main() {
 	// interfaces.Demo1() // interdacelerde aynı metodu imlemente eder gibi yazıyoruz aracı bir fun ile structlar üz kullanıyoruz
 	// interfaces.Demo2()
 
-	deferstatement.B()
+	// deferstatement.B()
+
+	deferstatement.Calculate()
 }

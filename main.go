@@ -1,7 +1,7 @@
 package main
 
 import (
-	stringfunctions "everymore-go/string_functions"
+	"everymore-go/restful"
 )
 
 func main() {
@@ -113,5 +113,7 @@ func main() {
 
 	// errorhandling.StartGame()
 
-	stringfunctions.Demo1()
+	// stringfunctions.Demo1()
+
+	restful.Demo1()
 }

@@ -1,7 +1,10 @@
 package main
 
 import (
-	productDdal "everymore-go/project/dal"
+	config "everymore-go/project"
+	"everymore-go/project/dal"
+	"everymore-go/project/dal/base/concrete"
+	entities "everymore-go/project/models"
 )
 
 func main() {
@@ -118,5 +121,12 @@ func main() {
 	// restful.Demo1()
 	// restful.AddTodo()
 
-	productDdal.GetAll()
+	// productDdal.GetAll()
+
+	productRepo := concrete.NewJsonRepository[*entities.Product](config.JsonServerBaseAdress, "products")
+	product := entities.Product{Name: "Subrosa", CategoryID: 2, UnitPrice: 44323.234}
+
+	dal.AddProduct(productRepo, &product)
+	dal.GetProducts(productRepo)
+
 }

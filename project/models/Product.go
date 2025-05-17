@@ -7,3 +7,11 @@ type Product struct {
 	UnitPrice  float64 `json:"unitPrice"`
 	Views      int     `json:"views"`
 }
+
+func (p *Product) GetID() int {
+	return p.ID
+}
+
+func (p *Product) SetID(id int) {
+	p.ID = id
+}

@@ -124,9 +124,10 @@ func main() {
 	// productDdal.GetAll()
 
 	productRepo := concrete.NewJsonRepository[*entities.Product](config.JsonServerBaseAdress, "products")
-	product := entities.Product{Name: "Subrosa", CategoryID: 2, UnitPrice: 44323.234}
+	product := entities.Product{Id: 132, Name: "Subrosa", CategoryID: 2, UnitPrice: 44323.234, Views: 123}
 
 	dal.AddProduct(productRepo, &product)
+	dal.AddProduct2()
 	dal.GetProducts(productRepo)
 
 }

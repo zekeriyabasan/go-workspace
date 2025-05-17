@@ -1,9 +1,13 @@
 package dal
 
 import (
+	"bytes"
+	"encoding/json"
+	config "everymore-go/project"
 	"everymore-go/project/dal/base/concrete"
 	entities "everymore-go/project/models"
 	"fmt"
+	"net/http"
 )
 
 func AddProduct(repo *concrete.JsonRepository[*entities.Product], product *entities.Product) error {
@@ -28,4 +32,21 @@ func GetProducts(repo *concrete.JsonRepository[*entities.Product]) ([]*entities.
 	}
 
 	return products, nil
+}
+
+func AddProduct2() {
+	product := entities.Product{Name: "Subrosa", CategoryID: 2, UnitPrice: 44323.234, Views: 123}
+	data, err := json.Marshal(product)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+	response, err := http.Post(config.JsonServerBaseAdress+"products", "application/json;charset:utf-8", bytes.NewBuffer(data))
+
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer response.Body.Close()
+
+	fmt.Println("Kaydedildi")
 }

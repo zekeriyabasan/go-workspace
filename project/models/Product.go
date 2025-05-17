@@ -1,7 +1,7 @@
 package entities
 
 type Product struct {
-	ID         int     `json:"id"`
+	Id         int     `json:"id"`
 	Name       string  `json:"name"`
 	CategoryID int     `json:"categoryId"`
 	UnitPrice  float64 `json:"unitPrice"`
@@ -9,9 +9,9 @@ type Product struct {
 }
 
 func (p *Product) GetID() int {
-	return p.ID
+	return p.Id
 }
 
 func (p *Product) SetID(id int) {
-	p.ID = id
+	p.Id = id
 }

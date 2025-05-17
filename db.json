@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Asus K555L",
+      "categoryId": 1,
+      "unitPrice": 14231.32,
+      "views": 100
+    },
+    {
+      "id": 2,
+      "name": "TREK CROSS 234",
+      "categoryId": 2,
+      "unitPrice": 55231.355,
+      "views": 33
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Technology"
+    },
+    {
+      "id": 2,
+      "name": "Bike"
+    }
+  ]
+}

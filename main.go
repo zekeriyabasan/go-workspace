@@ -1,7 +1,7 @@
 package main
 
 import (
-	"everymore-go/restful"
+	productDdal "everymore-go/project/dal"
 )
 
 func main() {
@@ -116,5 +116,7 @@ func main() {
 	// stringfunctions.Demo1()
 
 	// restful.Demo1()
-	restful.AddTodo()
+	// restful.AddTodo()
+
+	productDdal.GetAll()
 }
